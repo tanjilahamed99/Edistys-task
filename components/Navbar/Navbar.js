@@ -1,51 +1,24 @@
-import { IoIosArrowForward } from "react-icons/io";
+"use client";
+import { IoIosArrowForward, IoMdClose } from "react-icons/io";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import {
+  MdKeyboardArrowRight,
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false); // Fixed state naming
+  const [isMbDropDownOpen, setIsMbDropDownOpen] = useState(false); // Fixed state naming
+
   return (
-    <div className="bg-white">
+    <div className="lg:bg-white bg-primary">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
-            </ul>
-          </div>
-          <a className="btn btn-ghost text-xl">HyTech</a>
+          <a className="btn btn-ghost text-xl lg:text-3xl text-white lg:text-black">
+            HyTech
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-primary flex items-center ">
@@ -102,6 +75,73 @@ const Navbar = () => {
             Contact Us
             <IoIosArrowForward className="transition-transform duration-300 group-hover:translate-x-1" />
           </button>
+          <div className="relative">
+            {/* Open Button */}
+            {!isOpen ? (
+              <button
+                onClick={() => setIsOpen(true)}
+                className=" lg:hidden absolute -top-3 right-4 z-20 transition-opacity"
+              >
+                <FaBars className="text-white text-2xl " />
+              </button>
+            ) : (
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute  right-4 text-white text-2xl z-50 lg:hidden -top-3"
+              >
+                <IoMdClose />
+              </button>
+            )}
+
+            {/* Sidebar Menu */}
+            <div
+              className={`fixed left-0 w-full text-white shadow-lg z-40 bg-[#1b75db] transform transition-transform duration-300 ${
+                isOpen ? "translate-x-0" : "-translate-x-full"
+              }`}
+              style={{ height: "", marginTop: "30px" }} // Custom height & margin from navbar
+            >
+              {/* Menu Items */}
+              <ul className="menu p-4 ">
+                <div
+                  className="flex justify-between items-center cursor-pointer"
+                  onClick={() => setIsMbDropDownOpen(!isMbDropDownOpen)}
+                >
+                  <h2 className="font-medium text-sm">Solution</h2>
+
+                  {isMbDropDownOpen ? (
+                    <MdOutlineKeyboardArrowUp className="text-xl transition-transform duration-300 rotate-180" />
+                  ) : (
+                    <MdOutlineKeyboardArrowDown className="text-xl transition-transform duration-300" />
+                  )}
+                </div>
+
+                {/* Smooth Height Transition */}
+                <div
+                  className={`overflow-hidden transition-all duration-300  ${
+                    isMbDropDownOpen
+                      ? "max-h-40 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <li className=" text-sm transition-colors duration-300 px-3 py-2 hover:text-primary  text-white cursor-pointer">
+                    AnyCaaS
+                  </li>
+                  <li className=" text-sm transition-colors duration-300 px-3 py-2 hover:text-primary  text-white cursor-pointer">
+                    AnyBaaS
+                  </li>
+                  <li className=" text-sm transition-colors duration-300 px-3 py-2 hover:text-primary  text-white cursor-pointer">
+                    AnyPaaS
+                  </li>
+                </div>
+                <h2 className="font-medium text-sm my-4">Solution</h2>
+                <h2 className="font-medium text-sm">Solution</h2>
+
+                <button className="w-full border border-white h-10 mt-5 font-semibold  rounded-md flex justify-center items-center gap-2 ">
+                  Contact Us <MdKeyboardArrowRight className="text-2xl" />
+                </button>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
