@@ -52,13 +52,13 @@ const Footer = () => {
       <div className="bg-[#00152D]">
         <div className="footer  text-neutral-content items-center p-4 container mx-auto">
           <div>
-            <p className="text-[#1F80F0] font-semibold">
+            <p className="text-primary font-semibold">
               ©2023 All rights reserved.{" "}
               <span className="font-medium">Any Technology Pte Ltd.</span>
             </p>
           </div>
           <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-            <h2 className="text-[#1F80F0] font-semibold">Privacy Policy</h2>
+            <h2 className="text-primary font-semibold">Privacy Policy</h2>
           </nav>
         </div>
       </div>
