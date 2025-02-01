@@ -3,6 +3,7 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import FeatureOfFinance from "./FeatureOfFinance";
+import Trust from "./Trust";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Navbar />
       <Banner />
       <FeatureOfFinance />
+      <Trust />
       <Footer />
     </div>
   );
