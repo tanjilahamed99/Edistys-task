@@ -5,12 +5,14 @@ import React from "react";
 import FeatureOfFinance from "./FeatureOfFinance";
 import Trust from "./Trust";
 import Contact from "./Contact";
+import Philosophy from "./Philosophy";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Banner />
+      <Philosophy />
       <FeatureOfFinance />
       <Trust />
       <Contact />
