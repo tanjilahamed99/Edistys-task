@@ -11,8 +11,10 @@ import Feature from "./Feature";
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Banner />
+      <div className="lg:mb-[500px] mb-[100px]">
+        <Navbar />
+        <Banner />
+      </div>
       <Feature />
       <Philosophy />
       <FeatureOfFinance />

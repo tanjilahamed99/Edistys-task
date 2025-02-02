@@ -42,6 +42,20 @@
     overflow: hidden;
   }
 
+  .clip-left-to-right {
+    clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+  .clip-left-to-image {
+    clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    overflow: hidden;
+  }
+
   @keyframes bgMove {
     0% {
       transform: translateY(0) translateX(0);

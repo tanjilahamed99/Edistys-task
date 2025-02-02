@@ -13,16 +13,16 @@ const Navbar = () => {
   const [isMbDropDownOpen, setIsMbDropDownOpen] = useState(false); // Fixed state naming
 
   return (
-    <div className="lg:bg-white bg-primary">
+    <div className=" bg-primary">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
-          <a className="btn btn-ghost text-xl lg:text-3xl text-white lg:text-black">
+          <a className="text-xl lg:text-3xl text-white font-bold cursor-pointer">
             HyTech
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-primary flex items-center ">
-            <li className="lg:py-3 cursor-pointer  hover:bg-white lg:px-6 text-lg relative group">
+            <li className="lg:py-3 cursor-pointer text-white lg:px-6 text-lg relative group">
               Solutions
               <ul className="absolute left-0 top-full hidden group-hover:block space-y-3 p-4 bg-white rounded-box z-[10] w-60 shadow">
                 <li
@@ -51,26 +51,26 @@ const Navbar = () => {
             <li
               className="whitespace-nowrap group lg:py-3 lg:border-b lg:px-6 border-white border-opacity-0
              hover:border-opacity-100
-             transition-all duration-500 cursor-pointer  hover:!border-primary text-lg"
+             transition-all duration-500 cursor-pointer  hover:!border-white text-lg text-white"
             >
               Service
             </li>
             <li
               className="whitespace-nowrap group lg:py-3 lg:border-b lg:px-6 border-white border-opacity-0
              hover:border-opacity-100
-             transition-all duration-500 cursor-pointer hover:!border-primary  text-lg"
+             transition-all duration-500 cursor-pointer hover:!border-white  text-lg text-white"
             >
               About
             </li>
-            <li className="lg:py-3 cursor-pointer  lg:px-6 text-lg">EN</li>
+            <li className="lg:py-3 cursor-pointer  lg:px-6 text-lg text-white">EN</li>
           </ul>
         </div>
         <div className="navbar-end">
           <button
             className="bg-[#FE8853] text-white hover:bg-[#ee7d48] cursor-pointer hidden 
-  max-lg:w-full max-lg:justify-center max-lg:mt-16 pl-6 pr-10 py-[13px] text-res-link 
-  lg:text-link lg:flex items-center group transition-all drop-shadow-[#002045] 
-  hover:shadow-[#002045] rounded-xs text-xl font-bold rounded-sm gap-1"
+                        max-lg:w-full max-lg:justify-center max-lg:mt-16 pl-6 pr-10 py-[13px] text-res-link 
+                        lg:text-link lg:flex items-center group transition-all drop-shadow-[#002045] 
+                      hover:shadow-[#002045] rounded-xs text-xl font-bold rounded-sm gap-1"
           >
             Contact Us
             <IoIosArrowForward className="transition-transform duration-300 group-hover:translate-x-1" />

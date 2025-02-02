@@ -3,11 +3,8 @@
 import React, { useState, useEffect } from "react";
 import mainImg from "../../public/images/premium_photo-1688821126516-aad66aa5510d.jpg";
 import Image from "next/image";
-import img1 from "../../public/images/WaveLinesDesktop1.svg";
 import img2 from "../../public/images/2.svg";
 import img3 from "../../public/images/3.svg";
-import img4 from "../../public/images/WaveLinesDesktop4.svg";
-import { IoIosArrowForward } from "react-icons/io";
 import "./style.css";
 
 const Feature = () => {
