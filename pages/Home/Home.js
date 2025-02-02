@@ -6,12 +6,14 @@ import FeatureOfFinance from "./FeatureOfFinance";
 import Trust from "./Trust";
 import Contact from "./Contact";
 import Philosophy from "./Philosophy";
+import Feature from "./Feature";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Banner />
+      <Feature />
       <Philosophy />
       <FeatureOfFinance />
       <Trust />
